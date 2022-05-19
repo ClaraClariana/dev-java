@@ -1,0 +1,102 @@
+//1) Crie uma lista com nomes, faça as operações de inserção, e deleção; (na classe principal)
+		
+		List<String> nomes = new ArrayList<>();
+		
+		nomes.add("Clariana");
+		nomes.add("Saul");
+		nomes.add("Gael");
+		nomes.add("Renan");
+		nomes.add("Pauline");
+		nomes.add("Tarsila");
+		nomes.add("Pietra");
+		nomes.add("Graça");
+		nomes.add("Antonio Carlos");
+		
+		nomes.add(4, "Marluci");
+		
+		nomes.remove(0);
+		
+		for (String nome : nomes) {
+			System.out.println(nome);
+		}
+		
+
+	}
+
+}
+
+/*2) faça uma lista que recebe (usuário entra com o dado) números (Integer) e 
+		 * depois mostre na tela os números digitados; (na classe principal)
+		 */
+
+		Scanner leia = new Scanner(System.in);
+		
+		int numero;
+		
+		System.out.println("Qual número deseja incluir? ");
+		numero = leia.nextInt();
+		
+		List<Integer> numeros = new ArrayList<>();
+		numeros.add(numero);
+		
+		List<Integer> resultadoObtido = numeros.stream().filter(x -> x > 0).collect(Collectors.toList());
+		
+		for (Integer number : resultadoObtido) {
+			System.out.println("Número digitado: " + number);
+		}
+		
+		leia.close();
+	}
+
+}
+
+
+Exercicío 3:
+
+public class Program {
+
+	public static void main(String[] args) {
+
+
+		Scanner leia = new Scanner(System.in);
+		Pessoa pessoa = new Pessoa();
+		
+		System.out.print("Qual o seu nome? ");
+		pessoa.nome = leia.nextLine();
+		System.out.print("Qual a sua idade? ");
+		pessoa.idade = leia.nextInt();
+		System.out.print("Qual a sua altura? ");
+		pessoa.altura = leia.nextDouble();
+		
+		System.out.println("\nNome: " + pessoa.nome
+							+ "\nIdade " + pessoa.idade
+							+ "\nAltura: " + pessoa.altura);
+		
+		leia.close();
+
+	}
+
+}
+
+public class Pessoa {
+	
+	String nome;
+	int idade;
+	double altura;
+	
+	public Pessoa() {
+		
+	}
+	
+	public int Idade() {
+		if(idade > 18) {
+			return idade;
+		}else {
+			return idade;
+		}
+		
+		
+	}
+	
+
+}
