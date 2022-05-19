@@ -1,0 +1,177 @@
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Scanner leia = new Scanner(System.in);
+		
+		Ingresso entrada = new Ingresso();
+		Vip vip = new Vip();
+		
+		System.out.print("Nome do evento: ");
+		entrada.setEvento(leia.nextLine());
+		
+		System.out.print("Data do evento (dd/mm/aaaa): ");
+		entrada.setData(leia.nextLine());
+		
+		System.out.print("Valor: ");
+		entrada.setValor(leia.nextDouble());
+		
+		System.out.println(entrada.CompraIngresso());
+		
+		System.out.println("Informe o tipo de bebida, apenas para ingressos VIP:");
+		leia.nextLine();
+		vip.setBebida(leia.nextLine());
+		
+		System.out.println(entrada);
+		System.out.println(vip);
+		
+		
+		
+		leia.close();
+
+	}
+
+}
+
+public class Ingresso {
+
+	//evento, data, valor
+	
+	public String evento;
+	public String data;
+	public double valor;
+	
+	
+	public Ingresso() {
+		
+	}
+	
+	public Ingresso(String evento, String data, double valor) {
+		super();
+		this.evento = evento;
+		this.data = data;
+		this.valor = valor;
+	}
+
+	public String getEvento() {
+		return evento;
+	}
+
+	public void setEvento(String evento) {
+		this.evento = evento;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+	
+	public String CompraIngresso() {
+		if(valor <= 100) {
+			return "Ingresso convencional! " + valor;
+		}else if(valor > 100 && valor <= 250) {
+			return "Ingresso camarote!" + valor;
+		}else{
+			return "Ingresso VIP! " + valor;
+						
+		}
+		
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Nome do evento: " + evento
+				+ "\nData: " + data
+				+ "\nValor do ingresso: " + CompraIngresso();
+				
+
+	}
+
+	
+
+	
+	
+}
+
+public class Camarote extends Ingresso {
+	
+	public double ingressoCamarote;
+
+	public Camarote() {
+		super();
+		
+	}
+
+	public Camarote(String evento, String data, double valor, double ingressoCamarote) {
+		super(evento, data, valor);
+		this.ingressoCamarote = ingressoCamarote;
+	}
+
+	public double getIngressoCamarote() {
+		return ingressoCamarote;
+	}
+
+	public void setIngressoCamarote(double ingressoCamarote) {
+		this.ingressoCamarote = ingressoCamarote;
+	}
+	
+	
+	
+	
+	
+}
+
+public class Vip extends Ingresso {
+	
+	Scanner leia = new Scanner(System.in);
+	
+	public String ingresso;
+	public String bebida;
+
+	public Vip() {
+		super();
+		
+	}
+
+	public Vip(String evento, String data, double valor, String ingresso, String bebida) {
+		super(evento, data, valor);
+		this.ingresso = ingresso;
+		this.bebida = bebida;
+	}
+
+	public String getBebida() {
+		return bebida;
+	}
+
+	public void setBebida(String bebida) {
+		this.bebida = bebida;
+	}
+
+	public void setIngresso(String ingresso) {
+		this.ingresso = ingresso;
+	}
+	
+	public String getIngresso() {
+		return ingresso;
+	}
+
+	@Override
+	public String toString() {
+		return "Tipo de bebida: " + bebida;
+	}
+
+	
+	
+}
