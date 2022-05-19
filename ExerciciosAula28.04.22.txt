@@ -1,0 +1,63 @@
+1)Faça um Programa que leia um vetor de 5 números inteiros e mostre-os.
+
+		Scanner leia = new Scanner(System.in);
+		
+		int[] numeros = {8, 16, 24, 32, 40};
+		
+		for(int contador = 0; contador < numeros.length; contador++) {
+			System.out.print(numeros[contador] + "\t");
+		}
+		
+		
+		leia.close();
+
+
+2)Faça um Programa que leia 4 notas, mostre as notas e a média na tela.
+
+		Scanner leia = new Scanner(System.in);
+		
+		int[] notas = {10, 8, 9, 7};
+		int n1 = 10;
+		int n2 = 8;
+		int n3 = 9;
+		int n4 = 7;
+		int nTotal = (n1 + n2 + n3 + n4);
+		int media = (nTotal / 4);
+		
+		for(int contador = 0; contador < notas.length; contador++) {
+			System.out.println(notas[contador]);
+			
+		}
+		System.out.println("A media do aluno foi: " + media);
+		
+		
+		
+		leia.close();
+
+3)*Faça um Programa que leia 20 números inteiros e armazene-os num vetor. 
+Armazene os números pares na variavel PAR e os números IMPARES na variavel impar. 
+Imprima o vetor e imprima a o resultado das variáveis par e impar. 
+(teste com um array com menos posições, se der certo faça com as 20 posições, ok!?)
+		
+
+		Scanner leia = new Scanner(System.in);
+		
+		int[] numeros = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+		
+		int[] numPar = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+		
+		int[] numImpar = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
+		
+		for(int contador = 0; contador < numeros.length; contador++) {
+			System.out.println("Numeros do vetor: " + numeros[contador]);
+		}
+		
+		for(int contador = 0; contador < numPar.length; contador++) {
+			System.out.println("Numeros pares: " + numPar[contador]);
+		}
+		
+		for(int contador = 0; contador < numImpar.length; contador++) {
+			System.out.println("Numeros impares: " + numImpar[contador]);
+		}
+		
+		leia.close();
