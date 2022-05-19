@@ -1,0 +1,148 @@
+/*Crie uma classe jogador e os atributos: nome, peso, idade, quantidade de cartões, 
+		 * quantidade de gols na temporada, e salario e mostre os dados na classe principal, 
+		 * tente usar o método ToString;
+		 */
+		Scanner leia = new Scanner(System.in);
+		
+		Jogador jogador = new Jogador();
+		
+		System.out.print("Entre com o nome do jogador: ");
+		jogador.nome = leia.nextLine();
+		System.out.print("Entre com o peso: ");
+		jogador.peso = leia.nextDouble();
+		System.out.print("Entre com o idade: ");
+		jogador.idade = leia.nextInt();
+		System.out.print("Entre com a quantidade de cartões: ");
+		jogador.qtdeCartoes = leia.nextInt();
+		System.out.print("Entre com a quantidade de gols: ");
+		jogador.qtdeGols = leia.nextInt();
+		System.out.print("Entre com o valor do salário: ");
+		jogador.salario = leia.nextDouble();
+		
+		System.out.println(jogador);
+		
+		leia.close();
+
+	}
+
+public class Jogador {
+	public String nome;
+	public double peso;
+	public int idade;
+	public int qtdeCartoes;
+	public int qtdeGols;
+	public double salario;
+	
+	@Override
+	public String toString() {
+		
+		return "Nome do jogador: " + nome
+				+ "\nPeso: " + peso 
+				+ "\nIdade: " + idade
+				+ "\nQuantidade de cartões: " + qtdeCartoes 
+				+ "\nQuantidade de gols: " + qtdeGols
+				+ "\nSalário R$: " + salario;
+	}
+} 
+
+/*Crie uma classe Jogo com os atributos, time da casa, time visitante, 
+		 * placar do primeiro tempo, placar do segundo tempo, Crie o metodo placar final, 
+		 * recebendo o valor do primeiro tempo e do segundo tempo,  método ToString;
+		 */
+
+
+		Scanner leia = new Scanner(System.in);
+		
+		Jogo jogos = new Jogo();
+		
+		System.out.print("Entre com o nome do time da casa: ");
+		jogos.timeDaCasa = leia.nextLine();
+		System.out.print("Entre com o nome do time visitante: ");
+		jogos.timeVisitante = leia.nextLine();
+		System.out.print("Entre com o placar do time da casa no primeiro tempo: ");
+		jogos.placarTimeDaCasa1 = leia.nextInt();
+		System.out.print("Entre com o placar do time visitante no primeiro tempo: ");
+		jogos.placarTimeVisitante1 = leia.nextInt();
+		System.out.print("Entre com o placar do time da casa no segundo tempo: ");
+		jogos.placarTimedaCasa2 = leia.nextInt();
+		System.out.print("Entre com o placar do time visitante no segundo tempo: ");
+		jogos.placarTimeVisitante2 = leia.nextInt();
+		
+		System.out.println(jogos);
+		
+		
+		leia.close();
+
+	}
+
+}
+
+public class Jogo {
+	public String timeDaCasa;
+	public String timeVisitante;
+	public int placarTimeDaCasa1;
+	public int placarTimeVisitante1;
+	public int placarTimedaCasa2;
+	public int placarTimeVisitante2;
+ 
+	/*public int PlacarFinal() {
+		return "Time da Casa: " + (placarTimeDaCasa1 + placarTimedaCasa2)
+				+ "Time Visitante: " + (placarTimeVisitante1 + placarTimeVisitante2);
+	}*/
+	
+	@Override
+	public String toString() {
+		
+		return "Placar Final: " + timeDaCasa + " " + (placarTimeDaCasa1 + placarTimedaCasa2)
+				+ " X " + (placarTimeVisitante1 + placarTimeVisitante2) + " " + timeVisitante;
+	}
+}
+
+/*Crie uma classe jogador e os atributos: nome, peso, idade, quantidade de cartões, 
+		 * quantidade de gols na temporada, e salario e mostre os dados na classe principal, 
+		 * tente usar o método ToString;
+		 */
+		Scanner leia = new Scanner(System.in);
+		
+		Jogador jogador = new Jogador();
+		
+		System.out.print("Entre com o nome do jogador: ");
+		jogador.nome = leia.nextLine();
+		System.out.print("Entre com o peso: ");
+		jogador.peso = leia.nextDouble();
+		System.out.print("Entre com o idade: ");
+		jogador.idade = leia.nextInt();
+		System.out.print("Entre com a quantidade de cartões: ");
+		jogador.qtdeCartoes = leia.nextInt();
+		System.out.print("Entre com a quantidade de gols: ");
+		jogador.qtdeGols = leia.nextInt();
+		System.out.print("Entre com o valor do salário: ");
+		jogador.salario = leia.nextDouble();
+		
+		System.out.println(jogador);
+		
+		leia.close();
+
+	}
+
+}
+
+public class Jogador {
+	public String nome;
+	public double peso;
+	public int idade;
+	public int qtdeCartoes;
+	public int qtdeGols;
+	public double salario;
+	
+	@Override
+	public String toString() {
+		
+		return "Nome do jogador: " + nome
+				+ "\nPeso: " + peso 
+				+ "\nIdade: " + idade
+				+ "\nQuantidade de cartões: " + qtdeCartoes 
+				+ "\nQuantidade de gols: " + qtdeGols
+				+ "\nSalário R$: " + salario;
+	}
+} 
