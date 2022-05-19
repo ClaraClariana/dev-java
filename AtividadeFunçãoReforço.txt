@@ -1,0 +1,80 @@
+/*Crie uma funÃ§Ã£o para retornar o calculo da area de um triangulo:
+p = a + b + c /2;
+area = raiz  (p* (p - a) * (p-b) * (p-c))*/
+		
+		Scanner leia = new Scanner(System.in);
+		final var ponto = new Locale("en", "us");
+		
+		System.out.println("Entre com os 3 lados do triângulo: ");
+		double l1 = leia.useLocale(ponto).nextDouble();
+		double l2 = leia.useLocale(ponto).nextDouble();
+		double l3 = leia.useLocale(ponto).nextDouble();
+		
+		double resultado = CalcularTriangulo(l1, l2, l3);
+		
+		System.out.println("O calculo da area do triangulo é: " + resultado);
+		
+		leia.close();
+
+	}
+
+	static double CalcularTriangulo(double a, double b, double c) {
+		double p = (a + b + c) / 2;
+		double area = Math.sqrt((p * (p - a) * (p - b) * (p - c)));
+		return area;
+	}
+}
+
+
+/*crie uma funÃ§Ã£o que retorne o sexo de uma pessoa ('M', 'F') ou 
+		 * que retorne um erro caso nÃ£o for uma das opÃ§Ãµes;
+		 */
+
+		Scanner leia = new Scanner(System.in);
+		
+		System.out.println("Informe por favor o sexo: ");
+		char sexo = leia.next().charAt(0);
+		
+		System.out.println(VerificaSexo(sexo));
+		
+		
+		leia.close();
+	}
+
+	static String VerificaSexo(char s) {
+		if(s == 'm' || s == 'M') {
+			return "O sexo digitado foi masculino!";
+		}else if(s == 'f' || s == 'F') {
+			return "O sexo digitado foi feminino!";
+		}else {
+			return "O sexo digitado está incorreto, por favor tente novamente!";
+		}
+	}
+}
+
+//Criar uma funÃ§Ã£o que retorne o valor da maior idade entre 3 pessoas//
+
+		Scanner leia = new Scanner(System.in);
+		
+		System.out.println("Entre com as 3 idades: ");
+		int idade1 = leia.nextInt();
+		int idade2 = leia.nextInt();
+		int idade3 = leia.nextInt();
+		
+		int resultado = VerificaIdade(idade1, idade2, idade3);
+		
+		System.out.println("A maior idade é: " + resultado);
+		
+		leia.close();
+		
+	}
+
+	static int VerificaIdade(int a, int b, int c) {
+		if(a > b && a > c) {
+			return a;
+		}else if(b > a && b > c) {
+			return b;
+		}else {
+			return c;
+		}
+	}
