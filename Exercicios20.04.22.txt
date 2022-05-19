@@ -1,0 +1,140 @@
+Atividade 1:
+
+System.out.println("Ola Mundo!");
+
+
+Atividade 2:
+
+Scanner leia = new Scanner(System.in);
+		
+		double numero;
+		
+		System.out.print("Informe um numero de 0 a 10: ");
+		numero = leia.nextDouble();
+		
+		System.out.println("O numero informado foi " + numero);
+		
+		leia.close();
+
+
+Atividade 3:
+
+Scanner leia = new Scanner(System.in);
+		
+		double numero1;
+		double numero2;
+		double soma;
+		
+		System.out.print("Qual o primeiro numero? ");
+		numero1 = leia.nextDouble();
+		System.out.print("Qual o segundo numero? ");
+		numero2 = leia.nextDouble();
+		
+		soma = (numero1 + numero2);
+		
+		System.out.println("A soma dos numeros e: " + soma);
+		
+		leia.close();
+
+
+Atividade 4:
+
+Scanner leia = new Scanner(System.in);
+		
+		double nota1;
+		double nota2;
+		double nota3;
+		double nota4;
+		double media;
+		
+		System.out.print("Qual a nota do primeiro bimestre? ");
+		nota1 = leia.nextDouble();
+		System.out.print("Qual a nota do segundo bimestre? ");
+		nota2 = leia.nextDouble();
+		System.out.print("Qual a nota do terceiro bimestre? ");
+		nota3 = leia.nextDouble();
+		System.out.print("Qual a nota do quarto bimestre? ");
+		nota4 = leia.nextDouble();
+		
+		media = (nota1 + nota2 + nota3 + nota4) / 4;
+		
+		System.out.println("A media do aluno foi " + media);
+		
+		leia.close();
+
+
+Atividade 5:
+
+Scanner leia = new Scanner(System.in);
+		
+		double valorHora;
+		double horasMes;
+		double salario;
+		
+		System.out.print("Qual o valor da hora trabalhada? ");
+		valorHora = leia.nextDouble();
+		System.out.print("Quantas horas trabalhadas por mes? ");
+		horasMes = leia.nextDouble();
+		
+		salario = (valorHora*horasMes);
+		
+		System.out.println("Salario mes R$ " + salario);
+		
+		leia.close();
+		
+
+Atividade 6:
+
+Scanner leia = new Scanner(System.in);
+		
+		double lado1;
+		double lado2;
+		double area;
+		double dobro;
+		
+		System.out.print("Qual o comprimento do primeiro lado? ");
+		lado1 = leia.nextDouble();
+		System.out.print("Qual o comprimento do segundo lado? ");
+		lado2 = leia.nextDouble();
+		
+		area = (lado1*lado2);
+		System.out.println("A area do quadrado e: " + area);
+		
+		dobro = (lado1*lado2*2);
+		System.out.println("O dobro da area do quadrado e: " + dobro);
+		
+		leia.close();
+
+
+Atividade 7:
+
+Scanner leia = new Scanner(System.in);
+		
+		double fahrenheit;
+		double celsius;
+		
+		System.out.print("Qual a temperatura em Fahrenheit? ");
+		fahrenheit = leia.nextDouble();
+		
+		celsius = 5*((fahrenheit-32)/9);
+		
+		System.out.println("A temperatura em Celsius e: " + celsius);
+		
+		leia.close();
+
+
+Atividade 8:
+
+Scanner leia = new Scanner(System.in);
+		
+		double fahrenheit;
+		double celsius;
+		
+		System.out.print("Qual a temperatura em Celsius? ");
+		celsius = leia.nextDouble();
+		
+		fahrenheit = (celsius*9/5)+32;
+		
+		System.out.println("A temperatura em Fahrenheit e: " + fahrenheit);
+		
+		leia.close();
