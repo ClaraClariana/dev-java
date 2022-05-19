@@ -1,0 +1,88 @@
+public class Program {
+
+	public static void main(String[] args) {
+		/*Crie uma classe conta que terá os atributos nome, 
+		 * numeroConta, agencia, saldo. O saldo só poderá ser alterado 
+		 * pelos métodos sacar e depositar, ou seja o atributo saldo poderá 
+		 * ser atualizado somente por esses 2 métodos mas poderemos obter o 
+		 * valor do saldo para ser mostrado para o cliente.
+		 */
+		
+		Scanner leia = new Scanner(System.in);
+		Conta conta = new Conta();
+		
+		System.out.print("Entre com o nome do titular da conta: ");
+		String nome = leia.nextLine();
+		conta.SetNome(nome);
+		
+		//conta.SetNome("Clariana");
+		
+		System.out.print("Entre com o número da conta: ");
+		int nroConta = leia.nextInt();
+		conta.setNroConta(nroConta);
+		
+		System.out.println("Digite 1 para Depositar e 2 para Sacar.");
+		int opcao = leia.nextInt();
+		
+		do {
+			if(opcao == 1) {
+				System.out.print("Quer depositar quanto: ");
+				double valor = leia.nextDouble();
+				conta.Depositar(valor);
+			}else {
+				System.out.print("Quer sacar quanto: ");
+				double valor = leia.nextDouble();
+				conta.Sacar(valor);
+			}
+		}while(opcao != 1 && opcao != 2);
+		
+			
+		System.out.println("Nome do titular: " + conta.GetNome()
+						+ "\nNúmero conta: " + conta.getNroConta()
+						+ "\nSaldo: " + conta.getSaldo());
+		
+		
+		leia.close();
+	}
+		
+}
+	
+
+public class Conta {
+
+	private String nome;
+	private int nroConta;
+	private double saldo = 15000;
+	
+	public Conta() {
+		
+	}
+	
+	public String GetNome() {
+		return nome;
+	}
+	
+	public String SetNome(String nome) {
+		return this.nome = nome;
+	}
+
+	public int getNroConta() {
+		return nroConta;
+	}
+
+	public void setNroConta(int nroConta) {
+		this.nroConta = nroConta;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+	
+	public void Sacar(double valor) {
+		saldo = saldo - valor;
+	}
+	
+	public void Depositar(double valor) {
+		saldo = saldo + valor;
+	}
+}
