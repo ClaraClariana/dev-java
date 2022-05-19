@@ -1,0 +1,59 @@
+/*Crie um programa para fazer o calculo entre 2 números e receber o tipo de operação 
+		 * (soma, divisão...), Crie uma classe Calcular e os atributos numero1, numero2 e operador. 
+		 * Crie os métodos que achar necessário. Lembre-se que nossa logica estará apenas na classe Calcular,
+		 *  ok!? Se possível, use o ToString para mostrar os valores apenas na chamada do objeto;
+		 */
+
+		Scanner leia = new Scanner(System.in);
+		
+		Calcular calcular = new Calcular();
+		
+		
+		System.out.print("Entre com o primeiro número: ");
+		calcular.numero1 = leia.nextDouble();
+		System.out.print("Entre com o operador: ");
+		leia.nextLine();
+		calcular.operador = leia.nextLine();
+		System.out.print("Entre com o segundo número: ");
+		calcular.numero2 = leia.nextDouble();
+		
+		System.out.print(calcular);
+		
+		leia.close();
+	}
+
+}
+
+public class Calcular {
+	public double numero1;
+	public String operador;
+	public double numero2;
+	
+	public double Soma() {
+		return (numero1 + numero2);
+	}
+	
+	public double Subtracao() {
+		return (numero1 - numero2);
+	}
+	
+	public double Multiplicacao() {
+		return (numero1 * numero2);
+	}
+	
+	public double Divisao() {
+		return (numero1 / numero2);
+	}
+	
+	@Override
+	public String toString() {
+		
+			return "O resultado da Soma é: " + Soma()
+					+ "\nO resultado da Subtração é: " + Subtracao()
+					+ "\nO resultado da Multiplicação é: " + Multiplicacao()
+					+ "\nO resultado da Divisão é: " + Divisao();
+		
+		
+	}
+
+}
