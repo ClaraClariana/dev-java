@@ -1,0 +1,58 @@
+3)Faça um programa que leia dois números e imprima o maior deles;
+
+int numero1 = 20;
+		int numero2 = 15;
+		
+		if(numero1 > numero2) {
+			System.out.println("O numero 20 e maior que o numero 15");
+		}else {
+			System.out.println("O numero 15 e menor que o numero 20");
+		}
+
+4)Faça um programa que leia 3 números e mostre o maior deles;
+
+int numero1 = 3;
+		int numero2 = 4;
+		int numero3 = 5;
+		
+		
+		if(numero1 > numero2) {
+			System.out.println("O numero 3 e menor que o numero 4");
+		}else if(numero3 > numero2) {
+			System.out.println("O numero 5 e maior que o numero 4");
+		}
+		else {
+			System.out.println("Os blocos anteriores não são verdadeiros");
+		}
+
+2)Faça um programa que entre com um número e indique se ele é impar ou par;
+
+int num = 13;
+		
+		int resultado = num % 2;
+		if(num % 2 == 0) {
+			System.out.println("O numero e par " + resultado);
+		}else {
+			System.out.println("Numero impar " + resultado);
+		}
+
+6)Faça um programa que receba o sexo de uma pessoa e imprima na tela o sexo digitado,
+o programa não pode distinguir de maiúsculas e minúsculas;
+
+Scanner leia = new Scanner(System.in);
+		
+		char sexo;
+		
+				
+		System.out.print("Informe o seu sexo: use F para feminino e M para masculino ");
+		sexo = leia.next();
+		
+		
+		if(sexo == 'F') {
+			System.out.println("O sexo é feminino!");
+		}else {
+			System.out.println("O sexo é masculino!");
+		}
+		
+		leia.close();
+Obs.: Esse deu erro!!!
