@@ -1,0 +1,57 @@
+public static void main(String[] args) {
+		
+		Scanner leia = new Scanner(System.in);
+				
+		System.out.println("Escolha as opções do menu: 1 Lanches, 2 Porções, 3 Pratos Executivos, 4 Bebidas");
+		int opcao = leia.nextInt();
+		
+		switch (opcao) {
+		case 1: {
+			System.out.println("Opção lanches selecionada!");
+			break;
+		}
+		case 2: {
+			System.out.println("Opção porções selecionada!");
+			break;
+		}
+		case 3: {
+			System.out.println("Opção pratos executivos selecionada!");
+			break;		
+		}
+		case 4: {
+			System.out.println("Opção bebidas selecionada!");
+			break;
+		}
+		default:
+			System.out.println("Opção inválida!");
+		}
+				
+		String[] lanches = {"Misto quente", "Pão de queijo", "Hamburguer"};
+		
+		for(String l : lanches) {
+			System.out.print("\nLanches: " + l);
+		}
+		
+		String[] porcoes = {"Batata frita", "Caldos", "Filé com fritas"};
+		
+		for(String p : porcoes) {
+			System.out.print("\nPorções: " + p);
+		}
+			
+		String[] pratosExecutivos = {"Feijoada", "Lasanha", "Parmegiana"};
+		
+		for(String e : pratosExecutivos) {
+			System.out.print("\nPratos Executivos: " + e);
+		}
+		
+		String[] bebidas = {"Cerveja", "Refrigerante", "Suco"};
+		
+		for(String b : bebidas) {
+			System.out.print("\nBebidas: " + b);
+		}
+			
+		leia.close();
+
+	}
+
+}
