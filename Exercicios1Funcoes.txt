@@ -1,0 +1,48 @@
+/*Faça um programa, com uma função que necessite de três argumentos(parâmetros), e que forneça a
+		soma desses três argumentos(parâmetros)*/
+		
+		Scanner leia = new Scanner(System.in);
+		int x = 6;
+		int y = 4;
+		int z = 5;
+		
+		System.out.println(Somar(x, y, z));
+		
+		
+				
+		leia.close();
+
+	}
+	
+	static String Somar(int x, int y, int z) {
+		return "A soma foi: " + (x + y + z);
+	}
+}
+
+
+/*Faça um programa, com uma função que necessite de um argumento. A função
+		retorna o valor de caractere ‘P’, se seu argumento for positivo, e ‘N’, se seu
+		argumento for zero ou negativo.*/
+
+		Scanner leia = new Scanner(System.in);
+		
+		int numero;
+		System.out.println("Entre com um numero para saber se e negativo ou positivo: ");
+		numero = leia.nextInt();
+		
+		System.out.println(Show(numero));
+		
+		leia.close();
+	
+			
+	}
+		static char Show(int x) {
+			if(x >= 0) {
+				return 'P';
+			}else {
+				return 'N';
+			}
+				
+		}
+		
+}
