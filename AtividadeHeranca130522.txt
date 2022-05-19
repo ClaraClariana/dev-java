@@ -1,0 +1,81 @@
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Scanner leia = new Scanner(System.in);
+		Pessoa pessoa = new Pessoa();
+		Aluno aluno = new Aluno();
+		
+		
+		System.out.print("Qual seu nome? ");
+		pessoa.nome = leia.nextLine();
+		
+		System.out.print("Qual seu cpf? ");
+		pessoa.cpf = leia.nextLine();
+		
+		System.out.print("Qual sua idade? ");
+		pessoa.idade = leia.nextInt();
+		leia.nextLine();
+		System.out.print("Qual sua data de nascimento? ");
+		pessoa.dtnascimento = leia.nextLine();
+		
+		System.out.print("Qual seu sexo? ");
+		pessoa.sexo = leia.next().charAt(0);
+		leia.nextLine();
+		System.out.print("Qual sua cidade de nacimento? ");
+		pessoa.citynascimento = leia.nextLine();
+		
+		System.out.println(pessoa);
+		
+		System.out.println(aluno);
+		
+		
+		
+		leia.close();
+
+	}
+
+public class Pessoa {
+
+	/*Crie uma classe Pessoa com os atributo nome, cpf, idade, data nascimento, 
+	 * sexo, cidade de nascimento, crie uma classe aluno, que recebe os mesmos 
+	 * parametros da classe Pessoa insira os dados via teclado e mostre os dados 
+	 * das duas classes
+	 */
+	
+	public String nome;
+	public String cpf;
+	public int idade;
+	public String dtnascimento;
+	public char sexo;
+	public String citynascimento;
+	
+	@Override
+	public String toString() {
+		return "\nClasse Pessoa: "
+				+ "\nNome: " + nome
+				+ "\nCPF: " + cpf
+				+ "\nIdade: " + idade
+				+ "\nData de nascimento: " + dtnascimento
+				+ "\nSexo: " + sexo
+				+ "\nCidade de nascimento: " + citynascimento;
+	}
+}
+
+public class Aluno extends Pessoa{
+
+	public Aluno() {
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "\nClasse Aluno: "
+				+ "\nNome: " + nome
+				+ "\nCPF: " + cpf
+				+ "\nIdade: " + idade
+				+ "\nData de nascimento: " + dtnascimento
+				+ "\nSexo: " + sexo
+				+ "\nCidade de nascimento: " + citynascimento;
+	}
+}
