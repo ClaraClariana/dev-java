@@ -1,0 +1,49 @@
+public static void main(String[] args) {
+		/*Crie um programa que pode receber no mínimo dois números (parâmetros) 
+		 * para efetuar uma soma e no máximo 4 números, utilize os construtores para fazer esse exercício;
+		 */
+		
+		Scanner leia = new Scanner(System.in);
+		
+				
+		System.out.print("Entre com o primeiro número: ");
+		double n1 = leia.nextDouble();
+		System.out.print("Entre com o segundo número: ");
+		double n2 = leia.nextDouble();
+		System.out.print("Entre com o terceiro número: ");
+		double n3 = leia.nextDouble();
+		System.out.print("Entre com o quarto número: ");
+		double n4 = leia.nextDouble();
+		
+		Numeros num = new Numeros(n1, n2, n3, n4);
+			
+		System.out.println("A soma dos dois primeiros números é: " + num.Calcular(n1, n2));
+		System.out.println("A soma dos quatro números é: " + num.Calcular(n1, n2, n3, n4));
+		
+		leia.close();
+
+	}
+
+}
+
+public class Numeros {
+	public double n1;
+	public double n2;
+	public double n3;
+	public double n4;
+	
+	public Numeros(double n1, double n2, double n3, double n4) {
+		this.n1 = n1;
+		this.n2 = n2;
+		this.n3 = n3;
+		this.n4 = n4;
+	}
+			
+	public double Calcular(double n1, double n2) {
+		return n1 + n2;
+	}
+	public double Calcular(double n1, double n2, double n3, double n4) {
+		return n1 + n2 + n3 + n4;
+	}
+}
+
