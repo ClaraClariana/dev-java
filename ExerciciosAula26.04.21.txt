@@ -1,0 +1,82 @@
+/*1.Faça um programa que peça uma nota, entre zero e dez. Mostre uma mensagem caso o
+		valor seja inválido e continue pedindo até que o usuário informe um valor
+		válido.*/
+
+		Scanner leia = new Scanner(System.in);
+		final var ponto = new Locale("en", "us");
+		
+		double nota = 0;
+		
+		do {
+			
+			if(nota > 10) {
+				System.out.println("Nota digitada invalida!");
+			}
+			System.out.println("Entre com uma nota de 0 a 10:");
+			nota = leia.useLocale(ponto).nextDouble();
+			
+		}while(nota > 10);
+			
+		
+				
+		leia.close();
+	}
+
+
+/*2.Faça um programa que leia um nome de usuário e a sua senha e não aceite a senha
+igual ao nome do usuário, mostrando uma mensagem de erro e voltando a pedir as
+informações.*/
+		
+		Scanner leia = new Scanner(System.in);
+		
+		char nome;
+		char senha;
+		
+		System.out.println("Entre com o nome e a senha:");
+		nome = leia.next().charAt(0);
+		senha = leia.next().charAt(0);	
+	
+		
+		if(nome == senha) {
+			System.out.println("Troque a senha por uma mais segura!");			
+		
+		} do{
+		System.out.println("Entre com o nome e a senha:");
+		nome = leia.next().charAt(0);
+		senha = leia.next().charAt(0);
+		}while(nome == senha);
+		
+		
+		
+		leia.close();
+
+	}
+
+/*3.  Faça um programa que leia e valide as seguintes informações: A.Nome: maior que 3 caracteres; 
+		 * B.Idade:entre 0 e 150;
+		 * C.Salário:maior que zero;
+		 * D.Sexo:'f' ou 'm';
+		 * E.Estado Civil: 's', 'c', 'v', ‘d’;*/
+		
+		Scanner leia = new Scanner(System.in);
+		final var ponto = new Locale("en", "us");
+		
+		String nome = "Cl";
+		int idade = 41;
+		double salario = 2650.7;
+		char sexo = 'f';
+		String estadoCivil = "c";
+		
+		
+		if(nome.length() > 3 || idade <= 150 || salario > 0 || sexo == 'f' || estadoCivil == 's' || estadoCivil == 'c' || estadoCivil == 'v' || estadoCivil == 'd') {
+			System.out.println("Dados validos!");
+		}while(nome.length() > 3 || idade <= 150 || salario > 0 || sexo == 'f' || estadoCivil == 's' || estadoCivil == 'c' || estadoCivil == 'v' || estadoCivil == 'd');
+		
+		
+		
+		leia.close();
+
+	}
+
+}
+Obs.: O ultimo não consegui finalizar.
