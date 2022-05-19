@@ -1,0 +1,462 @@
+Exercício Funcionário:
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Scanner leia = new Scanner(System.in);
+		
+		
+		//Pessoa pessoa = new Pessoa();
+		Funcionario funcionario = new Funcionario();
+		FuncionarioTerceirizado ft = new FuncionarioTerceirizado();
+				
+		System.out.print("Nome: ");
+		funcionario.setNome(leia.nextLine());
+		
+		System.out.print("Idade: ");
+		funcionario.setIdade(leia.nextInt());
+		
+		System.out.print("Data de nascimento (dd/mm/aaaa): ");
+		leia.nextLine();
+		funcionario.setDtNascimento(leia.nextLine());
+		
+		System.out.print("CPF: ");
+		funcionario.setCpf(leia.nextLine());
+		
+		System.out.println("\n-------------------------------/n");
+		
+		System.out.println("Entre com o salario bruto R$: ");
+		funcionario.setSalarioBruto(leia.nextDouble());
+		
+		System.out.println("Entre com a porcentagem do INSS: ");
+		funcionario.setInss(leia.nextDouble());
+		
+		System.out.println("Entre com a porcentagem do IR: ");
+		funcionario.setIr(leia.nextDouble());
+		
+		System.out.println(funcionario);
+		
+		System.out.println("\nFuncionario Terceirizado");
+		
+		System.out.print("Nome: ");
+		leia.nextLine();
+		ft.setNome(leia.nextLine());
+		
+		System.out.print("Idade: ");
+		ft.setIdade(leia.nextInt());
+		
+		System.out.print("Data de nascimento (dd/mm/aaaa): ");
+		leia.nextLine();
+		ft.setDtNascimento(leia.nextLine());
+		
+		System.out.print("CPF: ");
+		ft.setCpf(leia.nextLine());
+		
+		System.out.println("\n-------------------------------/n");
+		
+		System.out.println("Entre com o salario bruto R$: ");
+		ft.setSalarioBruto(leia.nextDouble());
+		
+		System.out.println("Entre com a porcentagem do INSS: ");
+		ft.setInssft(leia.nextDouble());
+		
+		System.out.println("Entre com a porcentagem do IR: ");
+		ft.setIrft(leia.nextDouble());
+		
+		System.out.println(ft);
+		
+		leia.close();
+		
+
+	}
+
+}
+
+public class Pessoa {
+	//atributos: nome, idade, cpf.
+	
+	public String nome;
+	public int idade;
+	public String cpf;
+	
+	public Pessoa() {
+		
+	}
+	public Pessoa(String nome, int idade, String dtNascimento, String cpf) {
+		this.nome = nome;
+		this.idade = idade;
+		this.cpf = cpf;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getIdade() {
+		return idade;
+	}
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
+	@Override
+	public String toString() {
+		return "Nome: " + nome
+				+ "Idade: " + idade
+				+ "CPF: " + cpf;
+	}
+}
+
+public class Funcionario extends Pessoa {
+	/*herdando os atributos da classe pessoa e contento o salario bruto, 
+	 * inss (5%) , ir (11%), e salario liquido.
+	 */
+	
+	public double salarioBruto;
+	public double inss;
+	public double ir;
+	public double salarioLiquido;
+	
+	public Funcionario() {
+		super();
+	}
+	
+	public Funcionario(String nome, int idade, String dtNascimento, String cpf, 
+			double salarioBruto, double inss, double ir) {
+		super(nome, idade, dtNascimento, cpf);
+		this.salarioBruto = salarioBruto;
+		this.inss = inss;
+		this.ir = ir;
+		
+	}
+	public double getSalarioBruto() {
+		return salarioBruto;
+	}
+
+	public void setSalarioBruto(double salarioBruto) {
+		this.salarioBruto = salarioBruto;
+	}
+
+	public double getInss() {
+		return inss;
+	}
+
+	public void setInss(double inss) {
+		this.inss = inss;
+	}
+
+	public double getIr() {
+		return ir;
+	}
+
+	public void setIr(double ir) {
+		this.ir = ir;
+	}
+
+	public double getSalarioLiquido() {
+		return salarioLiquido;
+	}
+	
+	public double CalcularSalario() {
+		return salarioLiquido = salarioBruto - ((salarioBruto * ir / 100)
+				+ (salarioBruto * inss / 100));
+	}
+
+	@Override
+	public String toString() {
+		
+		return super.toString() + "\nSalário Bruto: " + salarioBruto
+				+ "\nSalário Líquido: " + CalcularSalario()
+				+ "\nINSS: " + inss	+ ", IR: " + ir;
+	}
+}
+
+public class FuncionarioTerceirizado extends Pessoa {
+	/*onde herda os atributos da classe pessoa, e tem mais o atributo de salario Bruto 
+	 * e salario liquido, e tem o desconto de inss (5%), ir (11%) e uma bonificação 
+	 * (10% por ser terceirizado);
+	 */
+
+	public double salarioBruto;
+	public double inssft;
+	public double irft;
+	public double salarioLiquido;
+	public double bonificacao;
+	
+	public FuncionarioTerceirizado() {
+		super();
+	}
+	
+	public FuncionarioTerceirizado(String nome, int idade, String dtNascimento, String cpf, 
+			double salarioBruto, double inssft, double irft, double salarioLiquido, double bonificacao) {
+		super(nome, idade, dtNascimento, cpf);
+		this.salarioBruto = salarioBruto;
+		this.inssft = inssft;
+		this.irft = irft;
+		this.salarioLiquido = salarioLiquido;
+		this.bonificacao = bonificacao;
+	}
+		
+	public double getSalarioBruto() {
+		return salarioBruto;
+	}
+
+	public void setSalarioBruto(double salarioBruto) {
+		this.salarioBruto = salarioBruto;
+	}
+
+	public double getInssft() {
+		return inssft;
+	}
+
+	public void setInssft(double inssft) {
+		this.inssft = inssft;
+	}
+
+	public double getIrft() {
+		return irft;
+	}
+
+	public void setIrft(double irft) {
+		this.irft = irft;
+	}
+
+	public double getBonificacao() {
+		return bonificacao;
+	}
+
+	public double getSalarioLiquido() {
+		return salarioLiquido;
+	}
+	
+	public double CalcularSalarioTerceirizado() {
+		return salarioLiquido = salarioBruto - ((salarioBruto * irft / 100)
+				+ (salarioBruto * inssft / 100));
+		/*return salarioLiquido += salarioLiquido * bonificacao / 100
+		 * se fizer assim incluir o set para a bonificação e a chamada na class principal. 
+		 * Ai não precisa mais de outros dois metodos
+		 */
+	}
+	
+	public void SalarioBruto(double valor) {
+		salarioBruto += valor;
+	}
+	
+	public double CalcularBonificacao() {
+		return bonificacao = salarioBruto * 0.10; 
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "\nSalário Bruto: " + salarioBruto
+				+ "\nSalario Líquido: " + CalcularSalarioTerceirizado()
+				+ "\nBonificação: " + CalcularBonificacao()
+				+ "\nINSS: " + inssft + ", IR: " + irft;
+	}
+}
+
+Exercício Aluno:
+
+public class Program {
+
+	public static void main(String[] args) {
+		Scanner leia = new Scanner(System.in);
+		
+		Aluno aluno = new Aluno();
+		Professor professor = new Professor();
+		
+		System.out.print("Entre com o nome do aluno: ");
+		aluno.setNome(leia.nextLine());
+		
+		System.out.print("Entre com o CPF do aluno: ");
+		aluno.setCpf(leia.nextLine());
+		
+		System.out.print("Entre com a idade do aluno: ");
+		aluno.setIdade(leia.nextInt());
+		
+		for(int i = 0; i < 4; i++) {
+			System.out.println("Entre com as notas: " + (i + 1));
+			double[] nota = new double[4];
+			nota[i] = leia.nextDouble();
+			aluno.setMedia(nota[i]);
+		}
+		
+		System.out.println(aluno);
+		aluno.Medias();
+		
+		System.out.println("\n--------------------------------------------/n");
+		
+		System.out.println("Entre com o nome do curso: ");
+		leia.nextLine();
+		professor.setCurso(leia.nextLine());
+		
+		System.out.println("Entre com a matéria: ");
+		professor.setMateria(leia.nextLine());
+		
+		leia.close();
+
+	}
+
+}
+
+public class Pessoa {
+	//atributos: nome, idade, cpf.
+	
+	public String nome;
+	public int idade;
+	public String cpf;
+	
+	public Pessoa() {
+		
+	}
+	public Pessoa(String nome, int idade, String cpf) {
+		this.nome = nome;
+		this.idade = idade;
+		this.cpf = cpf;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getIdade() {
+		return idade;
+	}
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
+	@Override
+	public String toString() {
+		return "Nome: " + nome
+				+ "\nIdade: " + idade
+				+ "\nCPF: " + cpf;
+	}
+}
+
+public class Aluno extends Pessoa {
+	/*classe aluno herda os atributos de pessoa e tem os atributos: curso, notas, 
+	 * e o método media onde a media se for maior ou igual a 7.0 ele estará aprovado, 
+	 * se a media for menor que 7 e maior que 6.0 o aluno estará de recuperação e 
+	 * terá  que fazer uma prova de recuperação onde deve tirar mais que 6.0 
+	 * para ser aprovado e caso contrario será reprovado, e se o aluno tirar 
+	 * menos que 6.0 na media geral estará reprovado, se o aluno for aprovado 
+	 * com media 10 deverá aparecer a mensagem aprovado com mérito.
+	 */
+
+	Scanner leia = new Scanner(System.in);
+	
+	public double[] notas;
+	public double media;
+	
+	public Aluno() {
+		super();
+	}
+	public Aluno(String nome, int idade, String cpf, double[] notas, double media) {
+		super(nome, idade, cpf);
+		this.notas = notas;
+		this.media = media;
+	}
+	public double[] getNotas() {
+		return notas;
+	}
+	public void setNotas(double[] notas) {
+		this.notas = notas;
+	}
+	public double getMedia() {
+		return media;
+	}
+	public void setMedia(double media) {
+		this.media = media;
+	}
+	public double Media(double[] valor) {
+		for(int i = 0; i < valor.length; i++) {
+			this.notas[i] = valor[i];
+			media += notas[i];
+		}
+		return media / 4;
+	}
+	
+	public void Medias() {
+		if(media >= 7.0 && media < 9.9) {
+			System.out.println("Aluno Aprovado! Media: " + media);
+		}else if(media == 10.0) {
+			System.out.println("Aluno aprovado com honra! Media: " + media);
+		}else if(media < 7.0 && media >= 6.0) {
+			System.out.println("Aluno de recuperação! Media: " + media);
+			System.out.println("Entre com a nota de recuperação: ");
+			media = leia.nextDouble();
+			if(media < 6.0) {
+				System.out.println("Aluno Reprovado! Media: " + media);
+			}else {
+				System.out.println("Aluno Aprovado! Media: " + media);
+			}
+		}else {
+			System.out.println("Aluno Reprovado! Media: " + media);
+		}
+	}
+	@Override
+	public String toString() {
+		return super.toString() + "\n";
+	}
+}
+
+ublic class Professor extends Pessoa {
+
+	/*A classe professor herda os atributos de pessoa, e adiciona 
+	 * o atributos de curso e matéria que leciona.
+	 */
+	
+	public String curso;
+	public String materia;
+	
+	public Professor() {
+		super();
+	}
+
+	public Professor(String nome, int idade, String cpf, String curso, String materia) {
+		super(nome, idade, cpf);
+		this.curso = curso;
+		this.materia = materia;
+	}
+
+	public String getCurso() {
+		return curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
+
+	public String getMateria() {
+		return materia;
+	}
+
+	public void setMateria(String materia) {
+		this.materia = materia;
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + "Curso: " + curso
+								+ "Matéria: " + materia;
+	}
+
+	
+}
+
